@@ -1,0 +1,131 @@
+🧠 What the Project Actually Does (High-Level Workflow)
+This is an end-to-end data pipeline simulating how a real company or government might:
+
+Ingest Covid-19 data from external sources
+
+Store it securely
+
+Transform it into clean, structured form
+
+Load it into a queryable database
+
+Visualize and monitor everything
+
+Deploy new updates smoothly (CI/CD)
+
+⚙️ Step-by-Step What Happens Technically
+1. Ingest Data from External Sources
+Sources: HTTP API (ECDC), Azure Blob (CSV), Excel, JSON, etc.
+
+Tool: ADF Copy Activity
+
+Target: Raw zone of Azure Data Lake Gen2
+
+Tech Concepts:
+
+Linked Service to define connection
+
+Dataset to define schema/path
+
+Triggers to run this daily or hourly
+
+2. Store Raw Data in Data Lake
+Files are stored in a structured folder format (e.g., raw/covid/ecdc/2025-06-24.csv)
+
+Storage account with access control via IAM or keys
+
+You use Azure Storage Explorer to inspect files
+
+You learn best practices like naming conventions and folder hierarchy
+
+3. Transform Data
+Option A: ADF Mapping Data Flows
+Visual drag-and-drop transformations:
+
+Clean nulls, filter out bad rows
+
+Pivot cases/deaths by country
+
+Join multiple sources together
+
+Create DimDate lookup
+
+Result: Saved in "clean" zone of Data Lake
+
+Option B: Databricks Notebooks
+Python (PySpark) transformations
+
+More flexible for complex logic than Data Flows
+
+Mounted Data Lake paths like /mnt/raw/...
+
+Option C: HDInsight Hive
+SQL-like Hive queries on data
+
+Simulates enterprise-grade batch processing
+
+4. Load to Azure SQL Database
+Final clean data moved via ADF Copy Activity
+
+Tables: CovidCases, Hospitalizations, Testing
+
+SQL tools: Azure Data Studio, ADF SQL sink, PowerShell
+
+Used as final structured query layer
+
+5. Visualize with Power BI
+Connect to Azure SQL
+
+Build reports like:
+
+Case trends by country
+
+Weekly testing vs hospital admissions
+
+Pivot tables, slicers, filters
+
+6. Monitor & Debug
+You learn to use:
+
+Azure Monitor for logs
+
+Log Analytics for deeper queries (e.g. error trends)
+
+Alerts if pipelines fail or data is missing
+
+Helps simulate real-world production monitoring
+
+7. Deploy with CI/CD
+Using Azure DevOps:
+
+Git repo stores pipeline JSON code
+
+Build and Release pipelines push code from Dev ➜ Test ➜ Prod
+
+Supports:
+
+ARM Templates for infra
+
+YAML Pipelines for automation
+
+You learn best practices for versioning and team workflows
+
+🧩 Advanced/Hidden Concepts You’ll Use Without Realizing
+Concept	What It Means
+Metadata-driven pipelines	Use parameters to reuse pipelines for different datasets (e.g., all countries).
+Data partitioning	Store data by date or region to improve query and storage efficiency.
+Security (IAM, Key Vault)	Controls who/what can access what. You’ll learn about keys vs identity-based access.
+Pipeline orchestration	Managing multiple pipelines in sequence (e.g., load → transform → load to SQL).
+Error handling & retries	You’ll learn If Condition, Validation, and Get Metadata to handle failures gracefully.
+
+🧠 What You’ll Be Able to Do After
+Build any data pipeline with Azure tools
+
+Transform messy datasets into clean models
+
+Handle real-time + batch ingestion
+
+Connect to BI tools, APIs, data lakes, databases
+
+Automate everything from code to dashboard
+

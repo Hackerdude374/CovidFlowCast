@@ -1,5 +1,3 @@
-https://portal.azure.com/?quickstart=true#home
-
 Useful Links & Resources
 Section: Overviews
 
@@ -31,3 +29,4 @@ Azure Cosmos DB - https://docs.microsoft.com/en-us/azure/cosmos-db/introduction
 
 
 Azure Data Lake Storage Gen2 - https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction
+

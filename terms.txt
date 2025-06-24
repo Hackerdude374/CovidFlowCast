@@ -1,0 +1,49 @@
+Azure Data Factory - Covid-19 Project Study Sheet
+=================================================
+
+🔧 Core Azure Tools
+--------------------
+- Azure Data Factory (ADF): Main ETL tool; builds data pipelines.
+- Azure Data Lake Storage Gen2: Stores raw/cleaned Covid data.
+- Azure SQL Database: Stores final structured Covid data.
+- Azure Blob Storage: Source for unstructured Covid files.
+- Azure DevOps: Automates code deployment (CI/CD).
+- Databricks: Runs transformation notebooks (Python, SQL).
+- HDInsight: Big data tool, runs Hive scripts for transformation.
+
+🔄 ADF Pipeline Building Blocks
+-------------------------------
+- Pipeline: A series of steps (activities) to move/transform data.
+- Activity: A single step (e.g., copy, delete, web request).
+- Control Flow Activities: Adds logic (If, ForEach, Metadata).
+- Copy Activity: Moves data from source to destination.
+- Linked Service: Connection setup for sources/destinations.
+- Dataset: Defines structure and path of data files.
+- Triggers: Schedules pipeline runs (time or event‑based).
+- Parameters & Variables: Makes pipelines dynamic and reusable.
+
+🛠️ Transformations (in Data Flows)
+-----------------------------------
+- Data Flow: Visual interface to transform data.
+- Source: Input dataset.
+- Filter: Keep only specific rows.
+- Select: Keep only specific columns.
+- Pivot: Turn rows into columns.
+- Lookup: Add info from another dataset.
+- Sink: Final destination of transformed data.
+
+📊 Monitoring & Deployment
+----------------------------
+- Monitoring: View pipeline runs and logs.
+- Azure Monitor: Tool for alerts and metrics.
+- Log Analytics: Advanced querying for logs.
+- CI/CD: Automates ADF deployment via Azure DevOps.
+
+📈 Visualization
+-----------------
+- Power BI: Visual dashboard tool; connects to SQL data.
+
+Tips:
+- You’ll use all tools together to build a full data pipeline.
+- Once you understand these blocks, the rest is just combining them smartly.
+- This course gives you **real project‑ready skills**.
